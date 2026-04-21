@@ -21,15 +21,28 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
+              sx={{ height: '100%' }}
             >
-              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <CardMedia
-                  component="img"
-                  height="220"
-                  image={service.image}
-                  alt={service.type}
-                  sx={{ objectFit: 'cover' }}
-                />
+              <Card sx={{
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                '&:hover': {
+                  'img': {
+                    transform: 'scale(1.1)'
+                  }
+                }
+              }}
+              >
+                <Box sx={{ height: '220px', overflow: 'hidden' }}>
+                  <CardMedia
+                    component="img"
+                    height="220"
+                    image={service.image}
+                    alt={service.type}
+                    sx={{ objectFit: 'cover', transition: 'all 0.3s linear' }}
+                  />
+                </Box>
                 <CardContent sx={{ flexGrow: 1, p: 3 }}>
                   <Typography variant="h5" sx={{ mb: 1 }}>{service.type}</Typography>
                   <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>{service.description}</Typography>

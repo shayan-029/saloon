@@ -46,17 +46,29 @@ export default function AboutUs() {
         <Grid size={{ xs: 12, md: 6 }}>
           <Grid container spacing={3}>
             {STATS.map((stat, i) => (
-              <Grid size={{ xs: 6 }} key={stat.label}>
-                <Box
-                  component={motion.div}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  sx={{ textAlign: 'center', p: 3, border: '1px solid', borderColor: 'divider' }}
-                >
-                  <Typography variant="h3" color="primary" sx={{ fontSize: '2.5rem', mb: 0.5 }}>{stat.value}</Typography>
-                  <Typography variant="body2" color="text.secondary">{stat.label}</Typography>
+              <Grid size={{ xs: 12, sm: 6 }} key={stat.label}>
+                <Box sx={{
+                  transition: 'all 0.3s linear',
+                  '&:hover': {
+                    transform: 'scale(1.05)'
+                  }
+                }}>
+                  <Box
+                    component={motion.div}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    sx={{
+                      textAlign: 'center',
+                      p: 3,
+                      border: '1px solid',
+                      borderColor: 'divider',
+                    }}
+                  >
+                    <Typography variant="h3" color="primary" sx={{ fontSize: '2.5rem', mb: 0.5 }}>{stat.value}</Typography>
+                    <Typography variant="body2" color="text.secondary">{stat.label}</Typography>
+                  </Box>
                 </Box>
               </Grid>
             ))}

@@ -25,7 +25,7 @@ export default function Gallery() {
       />
       <Grid container spacing={2}>
         {GALLERY_IMAGES.map((img, i) => (
-          <Grid size={{ xs: 6, sm: 4, md: 3 }} key={img.alt}>
+          <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={img.alt}>
             <Box
               component={motion.div}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -35,7 +35,12 @@ export default function Gallery() {
               sx={{
                 position: 'relative',
                 overflow: 'hidden',
-                aspectRatio: '3/4',
+                aspectRatio: {
+                  xs: '1 / 1',    // mobile square
+                  sm: '2 / 3',    // small tablets
+                  md: '3 / 4',    // desktop
+                  lg: '4 / 5',    // large screens
+                },
                 cursor: 'pointer',
                 '&:hover .overlay': { opacity: 1 },
                 '&:hover img': { transform: 'scale(1.06)' },
@@ -65,6 +70,6 @@ export default function Gallery() {
           </Grid>
         ))}
       </Grid>
-    </Box>
+    </Box >
   );
 }

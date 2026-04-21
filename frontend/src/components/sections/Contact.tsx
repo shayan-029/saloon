@@ -7,8 +7,10 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import SectionHeading from '@/components/ui/SectionHeading';
 import GoldButton from '@/components/ui/GoldButton';
+import GoogleMap from '@/components/ui/GoogleMap';
 import { CONTACT, WHATSAPP_NUMBER } from '@/config/contact';
 import { getWhatsAppUrl } from '@/lib/whatsapp';
+import { ChangeEvent } from 'react';
 
 const INFO_ITEMS = [
   { icon: <PhoneIcon sx={{ color: 'primary.main' }} />, label: 'Phone', value: CONTACT.phone },
@@ -92,7 +94,7 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
           >
             <Typography variant="h5" sx={{ mb: 3 }}>Send a Message</Typography>
-            <Stack sx={{ gap: 3 }} component="form" onSubmit={(e:any) => e.preventDefault()}>
+            <Stack sx={{ gap: 3 }} component="form" onSubmit={(e: ChangeEvent<HTMLFormElement>) => e.preventDefault()}>
               <Grid container spacing={2}>
                 <Grid size={{ xs: 12, sm: 6 }}>
                   <TextField fullWidth label="Your Name" required />
@@ -107,6 +109,17 @@ export default function Contact() {
           </Box>
         </Grid>
       </Grid>
+
+      <Box
+        component={motion.div}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        sx={{ mt: 8 }}
+      >
+        <GoogleMap address={CONTACT.address} height={420} />
+      </Box>
     </Box>
   );
 }

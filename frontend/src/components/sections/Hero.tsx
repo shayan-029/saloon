@@ -13,7 +13,7 @@ export default function Hero() {
       sx={{ position: 'relative', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}
     >
       <Image
-        src="https://images.unsplash.com/photo-1560066984-138daaa508a0?w=1920&q=85"
+        src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=85"
         alt="Luxe Salon interior"
         fill
         style={{ objectFit: 'cover', objectPosition: 'center' }}

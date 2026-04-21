@@ -2,7 +2,6 @@
 import {
   AppBar, Box, Toolbar, Typography, IconButton,
   Drawer, List, ListItem, ListItemButton, ListItemText,
-  useScrollTrigger, Slide,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -170,7 +169,7 @@ export default function Navbar() {
         slotProps={{
           paper: {
             sx: {
-              width: 280,
+              width: 290,
               backgroundColor: '#0A0A0A',
               borderLeft: '1px solid rgba(201,168,76,0.2)',
               px: 2,

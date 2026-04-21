@@ -1,5 +1,5 @@
 'use client';
-import { Box, Card, CardContent, Typography, List, ListItem, ListItemIcon, Stack, Grid } from '@mui/material';
+import { Box, Card, CardContent, Typography, List, ListItem, ListItemIcon, Grid } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import { motion } from 'framer-motion';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -54,6 +54,8 @@ export default function Pricing() {
                   border: pkg.featured ? '1px solid' : '1px solid transparent',
                   borderColor: pkg.featured ? 'primary.main' : 'transparent',
                   position: 'relative',
+                  transition: 'all 0.3s ease-in-out',
+                  '&:hover': { transform: 'translateY(-10px)' }
                 }}
               >
                 {pkg.featured && (
