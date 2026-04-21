@@ -9,7 +9,7 @@ export const SERVICES = [
   {
     type: ServiceType.HAIRCUT_STYLING,
     description: 'Precision cuts and bespoke styling tailored to your unique features.',
-    image: 'https://images.unsplash.com/photo-1560066984-138daaa508a0?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80',
     price: 'From PKR 2,500',
   },
   {

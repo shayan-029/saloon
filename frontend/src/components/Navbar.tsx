@@ -18,27 +18,32 @@ const NAV_LINKS = [
 ];
 
 function Logo({ small = false }: { small?: boolean }) {
+  const size = small ? 32 : 40;
   return (
-    <Box component="a" href="#home" sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 1 }}>
-      {/* Inline SVG mark — scissors / diamond accent */}
+    <Box component="a" href="#home" sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 1.25 }}>
+      {/* Scissors mark */}
       <Box
         component="svg"
-        viewBox="0 0 36 36"
-        sx={{ width: small ? 28 : 36, height: small ? 28 : 36, flexShrink: 0 }}
+        viewBox="0 0 40 40"
+        sx={{ width: size, height: size, flexShrink: 0 }}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <polygon points="18,2 34,10 34,26 18,34 2,26 2,10" stroke="#C9A84C" strokeWidth="1.5" fill="none" />
-        <polygon points="18,8 28,13 28,23 18,28 8,23 8,13" fill="#C9A84C" opacity="0.15" />
-        <text x="18" y="22" textAnchor="middle" fontFamily="serif" fontSize="13" fill="#C9A84C" fontWeight="600">L</text>
+        {/* Diamond frame */}
+        <rect x="5" y="5" width="30" height="30" rx="2" stroke="#C9A84C" strokeWidth="1.2" fill="none" transform="rotate(45 20 20)" />
+        {/* Scissors blades */}
+        <circle cx="13" cy="15" r="3" stroke="#C9A84C" strokeWidth="1.3" fill="none" />
+        <circle cx="13" cy="25" r="3" stroke="#C9A84C" strokeWidth="1.3" fill="none" />
+        <line x1="15.8" y1="16.8" x2="28" y2="22" stroke="#C9A84C" strokeWidth="1.3" strokeLinecap="round" />
+        <line x1="15.8" y1="23.2" x2="28" y2="18" stroke="#C9A84C" strokeWidth="1.3" strokeLinecap="round" />
       </Box>
       <Box>
         <Typography
           sx={{
             fontFamily: 'var(--font-cormorant), serif',
-            fontWeight: 600,
-            fontSize: small ? '1.15rem' : '1.4rem',
-            letterSpacing: '0.08em',
+            fontWeight: 700,
+            fontSize: small ? '1.15rem' : '1.45rem',
+            letterSpacing: '0.1em',
             color: '#FAFAFA',
             lineHeight: 1,
           }}
@@ -49,11 +54,11 @@ function Logo({ small = false }: { small?: boolean }) {
           sx={{
             fontFamily: 'var(--font-raleway), sans-serif',
             fontWeight: 400,
-            fontSize: '0.5rem',
-            letterSpacing: '0.35em',
+            fontSize: '0.48rem',
+            letterSpacing: '0.38em',
             color: '#C9A84C',
             lineHeight: 1,
-            mt: '2px',
+            mt: '3px',
           }}
         >
           SALON & SPA
