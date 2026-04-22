@@ -12,7 +12,10 @@ export class EmailService {
 
   constructor(private config: ConfigService) {
     this.resend = new Resend(this.config.get<string>('RESEND_API_KEY'));
-    this.fromEmail = this.config.get<string>('EMAIL_FROM', 'onboarding@resend.dev');
+    this.fromEmail = this.config.get<string>(
+      'EMAIL_FROM',
+      'onboarding@resend.dev',
+    );
     this.adminEmail = this.config.get<string>('ADMIN_EMAIL', '');
   }
 
