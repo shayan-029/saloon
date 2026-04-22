@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${raleway.variable}`} style={{ scrollBehavior: 'smooth' }}>
+    <html lang="en" className={`${cormorant.variable} ${raleway.variable}`} suppressHydrationWarning style={{ scrollBehavior: 'smooth', overflowX: 'hidden' }}>
       <body>
         <ThemeRegistry>
           <Navbar />

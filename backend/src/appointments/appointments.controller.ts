@@ -24,7 +24,7 @@ export class AppointmentsController {
   create(@Body() dto: CreateAppointmentDto) {
     return this.appointmentsService.create(dto);
   }
-
+  
   @Get()
   @ApiOperation({ summary: 'List all bookings' })
   findAll() {

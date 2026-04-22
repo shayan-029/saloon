@@ -6,7 +6,8 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import { CONTACT, WHATSAPP_NUMBER, WHATSAPP_MESSAGE } from '@/config/contact';
+import { CONTACT, WHATSAPP_NUMBER, WHATSAPP_MESSAGE, WHATSAPP_URL } from '@/config/contact';
+import { QRCodeSVG } from 'qrcode.react';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#home' },
@@ -211,11 +212,53 @@ export default function Footer() {
                 </Link>
               </Stack>
             ))}
+            {/* WhatsApp QR Code */}
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                mt: { xs: 7, md: 9 },
+                mb: 5,
+                gap: 2,
+              }}
+            >
+              <Typography
+                variant="subtitle1"
+                sx={{
+                  color: 'primary.main',
+                  letterSpacing: '0.2em',
+                  textTransform: 'uppercase',
+                  fontSize: '0.72rem',
+                }}
+              >
+                Chat on WhatsApp
+              </Typography>
+              <Box
+                component="a"
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  p: 1.5,
+                  border: '1px solid rgba(201,168,76,0.35)',
+                  backgroundColor: '#fff',
+                  display: 'inline-block',
+                  transition: 'border-color 0.25s ease',
+                  '&:hover': { borderColor: 'rgba(201,168,76,0.8)' },
+                }}
+              >
+                <QRCodeSVG value={WHATSAPP_URL} size={140} />
+              </Box>
+              <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.78rem' }}>
+                Scan to open WhatsApp chat
+              </Typography>
+            </Box>
           </Stack>
         </Grid>
       </Grid>
 
-      <Divider sx={{ borderColor: 'rgba(201,168,76,0.15)', mt: { xs: 7, md: 9 }, mb: 4 }} />
+      <Divider sx={{ borderColor: 'rgba(201,168,76,0.15)', mb: 4 }} />
 
       <Stack
         direction={{ xs: 'column', sm: 'row' }}
